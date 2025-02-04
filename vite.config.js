@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 export default defineConfig({
-  root: ".", // Set the root to 'src'
+  root: "src", // Set the root to 'src'
   build: {
     target: "es6",
     outDir: "../dist", // Output directory (relative to the ro
