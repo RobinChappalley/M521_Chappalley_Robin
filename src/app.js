@@ -1,8 +1,7 @@
 import Answer from "./answer.js";
+import Game from "./game.js";
 
-const answer = new Answer();
-const answer1 = new Answer();
-const answer2 = new Answer();
+const game = new Game(5);
 let positionOfFocus;
 const guess = [];
 

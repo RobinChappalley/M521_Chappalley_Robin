@@ -1,10 +1,9 @@
 class Answer {
   form;
-  #trialsNumber
+  #LettersInTheWord = 5;
   constructor() {
     this.form = document.createElement("form");
-    trial
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < this.#LettersInTheWord; i++) {
       this.form.appendChild(this.setField(i));
     }
     this.addSubmit();
