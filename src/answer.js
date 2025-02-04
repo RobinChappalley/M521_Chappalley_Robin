@@ -10,19 +10,19 @@ class Answer {
   addSubmit() {
     const submitButton = document.createElement("input");
     submitButton.type = "submit";
-    // submitButton = "hidden   ";
+    submitButton.setAttribute("hidden", "");
     this.form.append(submitButton);
+    this.form.setAttribute("inert","")
     document.querySelector(".board").append(this.form);
     return;
   }
   setField(id) {
     const field = document.createElement("input");
-
     field.classList.add("letter");
     field.type = "text";
     field.name = `letter-${id}`;
     field.id = `row-0--${id}`;
-    field.maxlength = "1";
+    field.setAttribute("maxlength", "1");
     console.log(field);
     return field;
   }
