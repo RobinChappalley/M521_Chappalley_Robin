@@ -1,7 +1,9 @@
 class Answer {
   form;
+  #trialsNumber
   constructor() {
     this.form = document.createElement("form");
+    trial
     for (let i = 0; i < 5; i++) {
       this.form.appendChild(this.setField(i));
     }
