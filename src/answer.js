@@ -12,7 +12,7 @@ class Answer {
     submitButton.type = "submit";
     submitButton.setAttribute("hidden", "");
     this.form.append(submitButton);
-    this.form.setAttribute("inert","")
+    this.form.setAttribute("inert", "");
     document.querySelector(".board").append(this.form);
     return;
   }
@@ -23,8 +23,10 @@ class Answer {
     field.name = `letter-${id}`;
     field.id = `row-0--${id}`;
     field.setAttribute("maxlength", "1");
-    console.log(field);
     return field;
+  }
+  toggle() {
+    this.form.toggleAttribute("inert");
   }
 }
 export default Answer;
