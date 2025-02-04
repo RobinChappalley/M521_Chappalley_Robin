@@ -1,2 +1,3 @@
-console.log("coucou");
-console.log("recoucou");
+import Answer from "./answer.js";
+
+const answer = new Answer();
