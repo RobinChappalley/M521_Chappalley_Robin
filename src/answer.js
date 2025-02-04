@@ -29,5 +29,38 @@ class Answer {
   toggle() {
     this.form.toggleAttribute("inert");
   }
+
+  async sendRequest(data) {
+    let word = { guess: "trust" };
+    if (this.entryIsFine(word.guess)) {
+      const options = {
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(word),
+        method: "POST",
+      };
+      const URL = "https://progweb-wwwordle-api.onrender.com/guess";
+      const response = await fetch(URL, options);
+      const datas = await response.json();
+
+      const message = document.createElement("p");
+      message.classList.add("message");
+      message.textContent = datas.message;
+      document.querySelector("p").append(message);
+      return datas;
+    }
+  }
+
+  isAlphaNumeric(word) {
+    return /^[a-zA-Z]+$/.test(word);
+  }
+
+  entryIsFine(input) {
+    if (!this.isAlphaNumeric(input)) {
+      return;
+    }
+    return true;
+  }
+
+  displayMessage(m) {}
 }
 export default Answer;

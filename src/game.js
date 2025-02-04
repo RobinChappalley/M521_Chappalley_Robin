@@ -5,11 +5,12 @@ class Game {
   constructor(number) {
     this.possibleAnswers = number;
     this.answers = [];
-    this.createAnswer();
+    this.createAnswer()
   }
   createAnswer() {
     for (let i = 0; i < this.possibleAnswers; i++) {
       this.answers.push(new Answer());
+
     }
   }
 }

@@ -14,7 +14,6 @@ document.querySelector(".board").addEventListener("click", (e) => {
   handleFocus(positionOfFocus);
 
   document.querySelector("form").addEventListener("keyup", (e) => {
-    console.log("quelque chose a été tapé !");
     handleTyping(e);
   });
 });
@@ -36,3 +35,20 @@ const handleTyping = (e) => {
 const isAlphaNumericKey = (key) => {
   return /^([\x30-\x39]|[\x61-\x7a])$/i.test(key);
 };
+
+async function handleSubmission() {
+  document.querySelector("form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const datas = await game.answers[0].sendRequest(getFormData(e.target));
+    datas.feedback.forEach((element) => {
+      setColors(element);
+    });
+    return datas;
+  });
+}
+handleSubmission();
+const getFormData = (e) => {
+  return Object.fromEntries(new FormData(e));
+};
+
+async function setColors() {}
